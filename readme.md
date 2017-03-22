@@ -39,10 +39,10 @@ server.register({
    In order to send a DELETE request to (for instance) "http://your-awesome-api-that-doesnt-exist-yet.com/users/1"with either strategy, follow the instructions below:
 
    - #### The `query` strategy
-   Send a POST request to  "http://your-awesome-api-that-doesnt-exist-yet.com/users/1?_method=DELETE"
+        Send a POST request to  "http://your-awesome-api-that-doesnt-exist-yet.com/users/1?_method=DELETE"
 
    - #### The `x-http-method-override` strategy
-   Send a POST request to "http://your-awesome-api-that-doesnt-exist-yet.com/users/1", but with a HTTP header of `x-http-method-override` that's been set to `DELETE`
+        Send a POST request to "http://your-awesome-api-that-doesnt-exist-yet.com/users/1", but with a HTTP header of `x-http-method-override` that's been set to `DELETE`
 
 
 - ### `query_override_key` parameter:
