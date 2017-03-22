@@ -1,6 +1,6 @@
 {
   "name": "hapi-http-method-override",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple plugin to provide non-disruptive options for overriding HTTP request methods in Hapi.js",
   "main": "index.js",
   "scripts": {
