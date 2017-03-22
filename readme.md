@@ -1,5 +1,5 @@
 
-# hapi-http-override
+# hapi-http-method-override
 -----
 ## Info
 A simple and non-destructive Hapi.js plugin for overriding HTTP methods. Useful for clients (like browsers) that don't have native methods of sending special (e.g: PUT, PATCH, DELETE) requests. Simply choose between two method overriding strategies (using a URL query parameter, or using the "x-http-method-override" header).
@@ -19,7 +19,7 @@ Simply require the package and register it with hapi's server.register function.
 "`strategy`" and "`query_method override`".
 ```
 server.register({
-    register: require("hapi-http-override"),
+    register: require("hapi-http-method-override"),
     options: {
         strategy : "query",
         query_override_key : "_custom_override_method"
@@ -70,7 +70,7 @@ server.connection({ port: 8080, host: 'localhost' });
 
 //require and define the options for hapi-http-override
 const hapi_http_override_options = {
-    register: require("hapi-http-override"),
+    register: require("hapi-http-method-override"),
     //define your options here
     options: {
         strategy : "query",
