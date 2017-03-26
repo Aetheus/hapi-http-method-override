@@ -6,18 +6,6 @@ A simple and non-destructive Hapi.js plugin for overriding HTTP methods. Useful 
 
 In either case, _you wouldn't have to modify your existing API routes_.
 
-----
-## Usage Options
-The plugin provides two "strategies" when it comes to overriding HTTP requests - one uses a simple query parameter, and another uses a header. For instance, in order to send a DELETE request to  "http://your-awesome-api-that-doesnt-exist-yet.com/users/1" with either strategy, follow the instructions below:
-
-- **The `query` strategy**:
-
-   Send a POST request to  "http://your-awesome-api-that-doesnt-exist-yet.com/users/1?_method=DELETE". Note the **_method** query parameter - this is configurable (see the "Basic Usage/Configuration" section)
-
-- **The `x-http-method-override` strategy**:
-
-   Send a POST request to "http://your-awesome-api-that-doesnt-exist-yet.com/users/1", but with a HTTP header of `x-http-method-override` that's been set to `DELETE`
-
 
 ----
 
@@ -42,11 +30,11 @@ server.register({
     - `"query"`
     - `"x-http-method-override"`
 
-  **Defaults to `"query"`.**
+  See ["Usage Options"](#usage-options) for details on these strategies. **Defaults to `"query"`.**
 
 
 
-- ** `query_override_key` parameter:**
+- **`query_override_key` parameter:**
 
    Takes a single string value. **Only used in conjuction with the `query` strategy**. This is used to override the query parameter name used by the `query` strategy, in case the default "`_method`" parameter name is already being used by your application.
 
@@ -54,6 +42,21 @@ server.register({
 
 
 -----------------------
+
+## Usage Options
+The plugin provides two "strategies" when it comes to overriding HTTP requests - one uses a simple query parameter, and another uses a header. For instance, in order to send a DELETE request to  "http://your-awesome-api-that-doesnt-exist-yet.com/users/1" with either strategy, follow the instructions below:
+
+- **The `query` strategy**:
+
+   Send a POST request to  "http://your-awesome-api-that-doesnt-exist-yet.com/users/1?_method=DELETE". Note the **_method** query parameter - this is configurable (see the ["Basic Usage/Configuration"](#basic-usageconfiguration) section)
+
+- **The `x-http-method-override` strategy**:
+
+   Send a POST request to "http://your-awesome-api-that-doesnt-exist-yet.com/users/1", but with a HTTP header of `x-http-method-override` that's been set to `DELETE`
+
+
+-----------------------
+
 
 ## Full Usage Example
 
