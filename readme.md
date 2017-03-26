@@ -10,7 +10,7 @@ A simple and non-destructive Hapi.js plugin for overriding HTTP methods. Useful 
 
 **Or you could** send the same `POST` request to "http://your-awesome-api-that-doesnt-exist-yet.com/users/1" and attach a `x-http-method-override` header to the request with the value of `DELETE` to achieve the same thing.
 
-In either case, _you wouldn't have to modify your existing API routes_. **It's that simple**.
+In either case, _you wouldn't have to modify your existing API routes_.
 
 ----
 
@@ -29,7 +29,7 @@ server.register({
 });
 ```
 
-- ### `strategy` parameter:
+- **`strategy` parameter**:
    Takes a single string value to choose your strategy. Possible options are:
    - `"query"`
    - `"x-http-method-override"`
@@ -38,14 +38,14 @@ server.register({
 
    In order to send a DELETE request to (for instance) "http://your-awesome-api-that-doesnt-exist-yet.com/users/1"with either strategy, follow the instructions below:
 
-   - #### The `query` strategy
+   - The `query` strategy
         Send a POST request to  "http://your-awesome-api-that-doesnt-exist-yet.com/users/1?_method=DELETE"
 
-   - #### The `x-http-method-override` strategy
+   - The `x-http-method-override` strategy
         Send a POST request to "http://your-awesome-api-that-doesnt-exist-yet.com/users/1", but with a HTTP header of `x-http-method-override` that's been set to `DELETE`
 
 
-- ### `query_override_key` parameter:
+- **`query_override_key` parameter**:
    Takes a single string value. **Only used in conjuction with the `query` strategy**. This is used to override the query parameter name used by the `query` strategy.
 
    **Defaults to `"_method"`.**
